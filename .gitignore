@@ -12,4 +12,6 @@ matsimExamples
 
 test/input/*
 
+test/output/*
+
 test.old/*
