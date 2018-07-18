@@ -111,8 +111,8 @@ public class RunCarsharingIT {
 		Scenario scenario = ScenarioUtils.loadScenario(config);
 		config.plansCalcRoute().setInsertingAccessEgressWalk(true);
 		
-		//--------------------------- Parse income -----------------------
-		parseIncome(utils.getClassInputDirectory() + config.plans().getInputFile(), scenario);
+		//--------------------------- Parse income & vot -----------------------
+		parseCustomeAttr(utils.getClassInputDirectory() + config.plans().getInputFile(), scenario);
 		
 		// ---
 
@@ -137,7 +137,7 @@ public class RunCarsharingIT {
 		log.info("done");
 	}
 
-	public static void parseIncome(String FileName,Scenario sc) {
+	public static void parseCustomeAttr(String FileName,Scenario sc) {
 
 		try {
 
