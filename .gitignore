@@ -10,6 +10,6 @@ matsimExamples
 /log_projects.log
 
 
-test/*
+test/input/*
 
 test.old/*
