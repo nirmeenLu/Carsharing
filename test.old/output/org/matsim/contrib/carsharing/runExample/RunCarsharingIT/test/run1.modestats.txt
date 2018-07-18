@@ -1,0 +1,5 @@
+Iteration	access_walk_ff	access_walk_ow	access_walk_tw	bike	car	egress_walk_ff	egress_walk_ow	egress_walk_tw	freefloating_vehicle	oneway_vehicle	other	pt	ride	twoway_vehicle	walk
+0	0.0	0.0	0.0	0.0	1.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0
+1	0.0	0.0	0.0	0.18181818181818182	0.09090909090909091	0.0	0.0	0.0	0.0	0.0	0.0	0.18181818181818182	0.0	0.0	0.0
+2	0.0	0.0	0.0	0.09090909090909091	0.09090909090909091	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.09090909090909091
+3	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0

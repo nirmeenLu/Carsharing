@@ -1,0 +1,95 @@
+2018-06-27 09:43:44,719  WARN ControlerConfigGroup:365 setting overwriting behavior to overwriteExistingFiles
+2018-06-27 09:43:44,722  WARN ControlerConfigGroup:366 this is not recommended, as it might result in a directory containing output from several model runs
+2018-06-27 09:43:44,723  WARN ControlerConfigGroup:367 prefer the options deleteDirectoryIfExists or failIfDirectoryExists
+2018-06-27 09:43:50,523 ERROR BasicPlanAgentImpl:165 last activity of person driver agent id 1 has end time < infty; setting it to infty
+2018-06-27 09:43:50,525 ERROR BasicPlanAgentImpl:166  This message given only once.
+2018-06-27 09:43:52,759  WARN CharyparNagelActivityScoring:235 There are opening or closing times defined for the first and last activity. The correctness of the scoring function can thus not be guaranteed.
+2018-06-27 09:43:52,761  WARN CharyparNagelActivityScoring:236 first activity: [type=h][coord=null][linkId=0][startTime=undefined][endTime=08:00:00][duration=undefined][facilityId=0]
+2018-06-27 09:43:52,762  WARN CharyparNagelActivityScoring:237 last activity: [type=h][coord=null][linkId=0][startTime=32:29:52][endTime=undefined][duration=undefined][facilityId=0]
+2018-06-27 09:43:52,763  WARN CharyparNagelActivityScoring:235 There are opening or closing times defined for the first and last activity. The correctness of the scoring function can thus not be guaranteed.
+2018-06-27 09:43:52,765  WARN CharyparNagelActivityScoring:236 first activity: [type=h][coord=null][linkId=12][startTime=undefined][endTime=08:00:03][duration=undefined][facilityId=1]
+2018-06-27 09:43:52,766  WARN CharyparNagelActivityScoring:237 last activity: [type=h][coord=null][linkId=12][startTime=16:20:30][endTime=undefined][duration=undefined][facilityId=1]
+2018-06-27 09:43:52,768  WARN CharyparNagelActivityScoring:235 There are opening or closing times defined for the first and last activity. The correctness of the scoring function can thus not be guaranteed.
+2018-06-27 09:43:52,769  WARN CharyparNagelActivityScoring:236 first activity: [type=h][coord=null][linkId=12][startTime=undefined][endTime=08:06:00][duration=undefined][facilityId=1]
+2018-06-27 09:43:52,770  WARN CharyparNagelActivityScoring:237 last activity: [type=h][coord=null][linkId=12][startTime=16:56:30][endTime=undefined][duration=undefined][facilityId=1]
+2018-06-27 09:43:52,771  WARN CharyparNagelActivityScoring:235 There are opening or closing times defined for the first and last activity. The correctness of the scoring function can thus not be guaranteed.
+2018-06-27 09:43:52,773  WARN CharyparNagelActivityScoring:236 first activity: [type=h][coord=null][linkId=15][startTime=undefined][endTime=08:06:03][duration=undefined][facilityId=2]
+2018-06-27 09:43:52,774  WARN CharyparNagelActivityScoring:237 last activity: [type=h][coord=null][linkId=15][startTime=16:32:30][endTime=undefined][duration=undefined][facilityId=2]
+2018-06-27 09:43:52,775  WARN CharyparNagelActivityScoring:235 There are opening or closing times defined for the first and last activity. The correctness of the scoring function can thus not be guaranteed.
+2018-06-27 09:43:52,776  WARN CharyparNagelActivityScoring:236 first activity: [type=h][coord=null][linkId=0][startTime=undefined][endTime=08:06:07][duration=undefined][facilityId=0]
+2018-06-27 09:43:52,778  WARN CharyparNagelActivityScoring:237 last activity: [type=h][coord=null][linkId=0][startTime=16:26:56][endTime=undefined][duration=undefined][facilityId=0]
+2018-06-27 09:43:52,779  WARN CharyparNagelActivityScoring:235 There are opening or closing times defined for the first and last activity. The correctness of the scoring function can thus not be guaranteed.
+2018-06-27 09:43:52,780  WARN CharyparNagelActivityScoring:236 first activity: [type=h][coord=null][linkId=12][startTime=undefined][endTime=08:06:10][duration=undefined][facilityId=1]
+2018-06-27 09:43:52,782  WARN CharyparNagelActivityScoring:237 last activity: [type=h][coord=null][linkId=12][startTime=17:02:30][endTime=undefined][duration=undefined][facilityId=1]
+2018-06-27 09:43:52,783  WARN CharyparNagelActivityScoring:235 There are opening or closing times defined for the first and last activity. The correctness of the scoring function can thus not be guaranteed.
+2018-06-27 09:43:52,784  WARN CharyparNagelActivityScoring:236 first activity: [type=h][coord=null][linkId=15][startTime=undefined][endTime=08:06:14][duration=undefined][facilityId=2]
+2018-06-27 09:43:52,785  WARN CharyparNagelActivityScoring:237 last activity: [type=h][coord=null][linkId=15][startTime=16:50:30][endTime=undefined][duration=undefined][facilityId=2]
+2018-06-27 09:43:52,786  WARN CharyparNagelActivityScoring:235 There are opening or closing times defined for the first and last activity. The correctness of the scoring function can thus not be guaranteed.
+2018-06-27 09:43:52,788  WARN CharyparNagelActivityScoring:236 first activity: [type=h][coord=null][linkId=0][startTime=undefined][endTime=08:06:18][duration=undefined][facilityId=0]
+2018-06-27 09:43:52,789  WARN CharyparNagelActivityScoring:237 last activity: [type=h][coord=null][linkId=0][startTime=16:44:56][endTime=undefined][duration=undefined][facilityId=0]
+2018-06-27 09:43:52,790  WARN CharyparNagelActivityScoring:235 There are opening or closing times defined for the first and last activity. The correctness of the scoring function can thus not be guaranteed.
+2018-06-27 09:43:52,792  WARN CharyparNagelActivityScoring:236 first activity: [type=h][coord=null][linkId=12][startTime=undefined][endTime=08:06:21][duration=undefined][facilityId=1]
+2018-06-27 09:43:52,793  WARN CharyparNagelActivityScoring:237 last activity: [type=h][coord=null][linkId=12][startTime=17:08:30][endTime=undefined][duration=undefined][facilityId=1]
+2018-06-27 09:43:52,794  WARN CharyparNagelActivityScoring:235 There are opening or closing times defined for the first and last activity. The correctness of the scoring function can thus not be guaranteed.
+2018-06-27 09:43:52,795  WARN CharyparNagelActivityScoring:236 first activity: [type=h][coord=null][linkId=12][startTime=undefined][endTime=08:00:36][duration=undefined][facilityId=1]
+2018-06-27 09:43:52,796  WARN CharyparNagelActivityScoring:237 last activity: [type=h][coord=null][linkId=12][startTime=16:38:30][endTime=undefined][duration=undefined][facilityId=1]
+2018-06-27 09:43:59,671  WARN CharyparNagelActivityScoring:235 There are opening or closing times defined for the first and last activity. The correctness of the scoring function can thus not be guaranteed.
+2018-06-27 09:43:59,673  WARN CharyparNagelActivityScoring:236 first activity: [type=h][coord=null][linkId=0][startTime=undefined][endTime=08:00:00][duration=undefined][facilityId=0]
+2018-06-27 09:43:59,674  WARN CharyparNagelActivityScoring:237 last activity: [type=h][coord=null][linkId=0][startTime=32:49:28][endTime=undefined][duration=undefined][facilityId=0]
+2018-06-27 09:43:59,675  WARN CharyparNagelActivityScoring:235 There are opening or closing times defined for the first and last activity. The correctness of the scoring function can thus not be guaranteed.
+2018-06-27 09:43:59,676  WARN CharyparNagelActivityScoring:236 first activity: [type=h][coord=null][linkId=12][startTime=undefined][endTime=08:00:03][duration=undefined][facilityId=1]
+2018-06-27 09:43:59,678  WARN CharyparNagelActivityScoring:237 last activity: [type=h][coord=null][linkId=12][startTime=16:06:54][endTime=undefined][duration=undefined][facilityId=1]
+2018-06-27 09:43:59,679  WARN CharyparNagelActivityScoring:235 There are opening or closing times defined for the first and last activity. The correctness of the scoring function can thus not be guaranteed.
+2018-06-27 09:43:59,680  WARN CharyparNagelActivityScoring:236 first activity: [type=h][coord=null][linkId=12][startTime=undefined][endTime=08:06:00][duration=undefined][facilityId=1]
+2018-06-27 09:43:59,681  WARN CharyparNagelActivityScoring:237 last activity: [type=h][coord=null][linkId=12][startTime=16:24:19][endTime=undefined][duration=undefined][facilityId=1]
+2018-06-27 09:43:59,682  WARN CharyparNagelActivityScoring:235 There are opening or closing times defined for the first and last activity. The correctness of the scoring function can thus not be guaranteed.
+2018-06-27 09:43:59,684  WARN CharyparNagelActivityScoring:236 first activity: [type=h][coord=null][linkId=15][startTime=undefined][endTime=08:06:03][duration=undefined][facilityId=2]
+2018-06-27 09:43:59,685  WARN CharyparNagelActivityScoring:237 last activity: [type=h][coord=null][linkId=15][startTime=16:30:19][endTime=undefined][duration=undefined][facilityId=2]
+2018-06-27 09:43:59,686  WARN CharyparNagelActivityScoring:235 There are opening or closing times defined for the first and last activity. The correctness of the scoring function can thus not be guaranteed.
+2018-06-27 09:43:59,687  WARN CharyparNagelActivityScoring:236 first activity: [type=h][coord=null][linkId=0][startTime=undefined][endTime=08:06:07][duration=undefined][facilityId=0]
+2018-06-27 09:43:59,689  WARN CharyparNagelActivityScoring:237 last activity: [type=h][coord=null][linkId=0][startTime=16:52:33][endTime=undefined][duration=undefined][facilityId=0]
+2018-06-27 09:43:59,690  WARN CharyparNagelActivityScoring:235 There are opening or closing times defined for the first and last activity. The correctness of the scoring function can thus not be guaranteed.
+2018-06-27 09:43:59,691  WARN CharyparNagelActivityScoring:236 first activity: [type=h][coord=null][linkId=15][startTime=undefined][endTime=08:06:14][duration=undefined][facilityId=2]
+2018-06-27 09:43:59,692  WARN CharyparNagelActivityScoring:237 last activity: [type=h][coord=null][linkId=15][startTime=16:15:56][endTime=undefined][duration=undefined][facilityId=2]
+2018-06-27 09:43:59,693  WARN CharyparNagelActivityScoring:235 There are opening or closing times defined for the first and last activity. The correctness of the scoring function can thus not be guaranteed.
+2018-06-27 09:43:59,695  WARN CharyparNagelActivityScoring:236 first activity: [type=h][coord=null][linkId=0][startTime=undefined][endTime=08:06:18][duration=undefined][facilityId=0]
+2018-06-27 09:43:59,696  WARN CharyparNagelActivityScoring:237 last activity: [type=h][coord=null][linkId=0][startTime=16:16:46][endTime=undefined][duration=undefined][facilityId=0]
+2018-06-27 09:43:59,698  WARN CharyparNagelActivityScoring:235 There are opening or closing times defined for the first and last activity. The correctness of the scoring function can thus not be guaranteed.
+2018-06-27 09:43:59,699  WARN CharyparNagelActivityScoring:236 first activity: [type=h][coord=null][linkId=12][startTime=undefined][endTime=08:06:21][duration=undefined][facilityId=1]
+2018-06-27 09:43:59,700  WARN CharyparNagelActivityScoring:237 last activity: [type=h][coord=null][linkId=12][startTime=16:23:13][endTime=undefined][duration=undefined][facilityId=1]
+2018-06-27 09:43:59,702  WARN CharyparNagelActivityScoring:235 There are opening or closing times defined for the first and last activity. The correctness of the scoring function can thus not be guaranteed.
+2018-06-27 09:43:59,703  WARN CharyparNagelActivityScoring:236 first activity: [type=h][coord=null][linkId=12][startTime=undefined][endTime=08:00:36][duration=undefined][facilityId=1]
+2018-06-27 09:43:59,704  WARN CharyparNagelActivityScoring:237 last activity: [type=h][coord=null][linkId=12][startTime=16:16:14][endTime=undefined][duration=undefined][facilityId=1]
+2018-06-27 09:44:05,411  WARN CharyparNagelActivityScoring:235 There are opening or closing times defined for the first and last activity. The correctness of the scoring function can thus not be guaranteed.
+2018-06-27 09:44:05,412  WARN CharyparNagelActivityScoring:236 first activity: [type=h][coord=null][linkId=0][startTime=undefined][endTime=08:00:00][duration=undefined][facilityId=0]
+2018-06-27 09:44:05,413  WARN CharyparNagelActivityScoring:237 last activity: [type=h][coord=null][linkId=0][startTime=32:44:33][endTime=undefined][duration=undefined][facilityId=0]
+2018-06-27 09:44:05,415  WARN CharyparNagelActivityScoring:235 There are opening or closing times defined for the first and last activity. The correctness of the scoring function can thus not be guaranteed.
+2018-06-27 09:44:05,416  WARN CharyparNagelActivityScoring:236 first activity: [type=h][coord=null][linkId=12][startTime=undefined][endTime=08:00:03][duration=undefined][facilityId=1]
+2018-06-27 09:44:05,418  WARN CharyparNagelActivityScoring:237 last activity: [type=h][coord=null][linkId=12][startTime=16:06:54][endTime=undefined][duration=undefined][facilityId=1]
+2018-06-27 09:44:05,419  WARN CharyparNagelActivityScoring:235 There are opening or closing times defined for the first and last activity. The correctness of the scoring function can thus not be guaranteed.
+2018-06-27 09:44:05,420  WARN CharyparNagelActivityScoring:236 first activity: [type=h][coord=null][linkId=12][startTime=undefined][endTime=08:06:00][duration=undefined][facilityId=1]
+2018-06-27 09:44:05,421  WARN CharyparNagelActivityScoring:237 last activity: [type=h][coord=null][linkId=12][startTime=16:49:45][endTime=undefined][duration=undefined][facilityId=1]
+2018-06-27 09:44:05,423  WARN CharyparNagelActivityScoring:235 There are opening or closing times defined for the first and last activity. The correctness of the scoring function can thus not be guaranteed.
+2018-06-27 09:44:05,424  WARN CharyparNagelActivityScoring:236 first activity: [type=h][coord=null][linkId=12][startTime=undefined][endTime=08:06:10][duration=undefined][facilityId=1]
+2018-06-27 09:44:05,425  WARN CharyparNagelActivityScoring:237 last activity: [type=h][coord=null][linkId=12][startTime=17:30:40][endTime=undefined][duration=undefined][facilityId=1]
+2018-06-27 09:44:05,427  WARN CharyparNagelActivityScoring:235 There are opening or closing times defined for the first and last activity. The correctness of the scoring function can thus not be guaranteed.
+2018-06-27 09:44:05,428  WARN CharyparNagelActivityScoring:236 first activity: [type=h][coord=null][linkId=15][startTime=undefined][endTime=08:06:14][duration=undefined][facilityId=2]
+2018-06-27 09:44:05,429  WARN CharyparNagelActivityScoring:237 last activity: [type=h][coord=null][linkId=15][startTime=16:21:10][endTime=undefined][duration=undefined][facilityId=2]
+2018-06-27 09:44:05,431  WARN CharyparNagelActivityScoring:235 There are opening or closing times defined for the first and last activity. The correctness of the scoring function can thus not be guaranteed.
+2018-06-27 09:44:05,432  WARN CharyparNagelActivityScoring:236 first activity: [type=h][coord=null][linkId=0][startTime=undefined][endTime=08:06:18][duration=undefined][facilityId=0]
+2018-06-27 09:44:05,433  WARN CharyparNagelActivityScoring:237 last activity: [type=h][coord=null][linkId=0][startTime=16:16:46][endTime=undefined][duration=undefined][facilityId=0]
+2018-06-27 09:44:05,434  WARN CharyparNagelActivityScoring:235 There are opening or closing times defined for the first and last activity. The correctness of the scoring function can thus not be guaranteed.
+2018-06-27 09:44:05,436  WARN CharyparNagelActivityScoring:236 first activity: [type=h][coord=null][linkId=12][startTime=undefined][endTime=08:00:36][duration=undefined][facilityId=1]
+2018-06-27 09:44:05,437  WARN CharyparNagelActivityScoring:237 last activity: [type=h][coord=null][linkId=12][startTime=16:43:45][endTime=undefined][duration=undefined][facilityId=1]
+2018-06-27 09:44:11,377  WARN CharyparNagelActivityScoring:235 There are opening or closing times defined for the first and last activity. The correctness of the scoring function can thus not be guaranteed.
+2018-06-27 09:44:11,378  WARN CharyparNagelActivityScoring:236 first activity: [type=h][coord=null][linkId=0][startTime=undefined][endTime=08:00:00][duration=undefined][facilityId=0]
+2018-06-27 09:44:11,380  WARN CharyparNagelActivityScoring:237 last activity: [type=h][coord=null][linkId=0][startTime=32:36:37][endTime=undefined][duration=undefined][facilityId=0]
+2018-06-27 09:44:11,381  WARN CharyparNagelActivityScoring:235 There are opening or closing times defined for the first and last activity. The correctness of the scoring function can thus not be guaranteed.
+2018-06-27 09:44:11,382  WARN CharyparNagelActivityScoring:236 first activity: [type=h][coord=null][linkId=12][startTime=undefined][endTime=08:00:03][duration=undefined][facilityId=1]
+2018-06-27 09:44:11,383  WARN CharyparNagelActivityScoring:237 last activity: [type=h][coord=null][linkId=12][startTime=16:06:54][endTime=undefined][duration=undefined][facilityId=1]
+2018-06-27 09:44:11,385  WARN CharyparNagelActivityScoring:235 There are opening or closing times defined for the first and last activity. The correctness of the scoring function can thus not be guaranteed.
+2018-06-27 09:44:11,386  WARN CharyparNagelActivityScoring:236 first activity: [type=h][coord=null][linkId=12][startTime=undefined][endTime=08:06:00][duration=undefined][facilityId=1]
+2018-06-27 09:44:11,387  WARN CharyparNagelActivityScoring:237 last activity: [type=h][coord=null][linkId=12][startTime=16:41:49][endTime=undefined][duration=undefined][facilityId=1]
+2018-06-27 09:44:11,388  WARN CharyparNagelActivityScoring:235 There are opening or closing times defined for the first and last activity. The correctness of the scoring function can thus not be guaranteed.
+2018-06-27 09:44:11,390  WARN CharyparNagelActivityScoring:236 first activity: [type=h][coord=null][linkId=12][startTime=undefined][endTime=08:00:36][duration=undefined][facilityId=1]
+2018-06-27 09:44:11,391  WARN CharyparNagelActivityScoring:237 last activity: [type=h][coord=null][linkId=12][startTime=16:35:49][endTime=undefined][duration=undefined][facilityId=1]

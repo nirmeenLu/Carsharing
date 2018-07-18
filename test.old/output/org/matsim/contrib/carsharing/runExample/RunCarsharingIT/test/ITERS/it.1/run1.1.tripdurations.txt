@@ -1,0 +1,14 @@
+pattern	0+	5+	10+	15+	20+	25+	30+	35+	40+	45+	50+	55+	60+
+car interaction---car interaction	1	1	0	0	0	0	0	0	0	0	0	0	0
+car interaction---h	1	0	0	0	0	0	0	0	0	0	0	0	0
+car interaction---w	1	0	0	0	0	0	0	0	0	0	0	0	0
+h---car interaction	1	0	0	0	0	0	0	0	0	0	0	0	0
+h---tw_interaction	3	0	1	1	0	0	0	0	0	0	0	0	0
+h---w	1	3	0	0	0	0	0	0	0	0	0	0	0
+tw_interaction---h	3	0	1	1	0	0	0	0	0	0	0	0	0
+tw_interaction---w	3	1	0	1	0	0	0	0	0	0	0	0	0
+w---car interaction	1	0	0	0	0	0	0	0	0	0	0	0	0
+w---h	1	3	0	0	0	0	0	0	0	0	0	0	0
+w---tw_interaction	2	3	0	0	0	0	0	0	0	0	0	0	0
+
+average trip duration: 349.4117647058824 seconds = 00:05:49
