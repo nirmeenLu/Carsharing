@@ -1,9 +1,0 @@
-pattern	0+	5+	10+	15+	20+	25+	30+	35+	40+	45+	50+	55+	60+
-h---tw_interaction	1	0	3	0	0	0	0	0	0	0	0	0	0
-h---w	1	0	0	0	0	0	0	0	0	0	0	0	0
-tw_interaction---h	1	0	3	0	0	0	0	0	0	0	0	0	0
-tw_interaction---w	2	2	0	0	0	0	0	0	0	0	0	0	0
-w---h	1	0	0	0	0	0	0	0	0	0	0	0	0
-w---tw_interaction	4	0	0	0	0	0	0	0	0	0	0	0	0
-
-average trip duration: 381.6666666666667 seconds = 00:06:21

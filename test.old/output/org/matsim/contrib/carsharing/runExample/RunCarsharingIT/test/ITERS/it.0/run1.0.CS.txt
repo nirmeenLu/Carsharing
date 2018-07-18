@@ -1,1 +1,0 @@
-personID,carsharingType,startTime,endTIme,startLink,pickupLink,dropoffLink,endLink,distance,inVehicleTime,accessTime,egressTime,vehicleID,companyID,vehicleType
