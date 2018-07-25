@@ -2,6 +2,8 @@ package org.matsim.contrib.carsharing.scoring;
 
 import java.util.Set;
 
+import javax.swing.text.html.HTMLDocument.HTMLReader.IsindexAction;
+
 import org.matsim.api.core.v01.Id;
 import org.matsim.api.core.v01.TransportMode;
 import org.matsim.api.core.v01.events.Event;
@@ -30,12 +32,12 @@ public class CarsharingLegScoringFunction extends org.matsim.core.scoring.functi
 	private DemandHandler demandHandler;
 	private Person person;
 	private CarsharingSupplyInterface carsharingSupplyContainer;
-	/*
+	
 	private static final  Set<String> walkingLegs = ImmutableSet.of("egress_walk_ow", "access_walk_ow",
 			"egress_walk_tw", "access_walk_tw", "egress_walk_ff", "access_walk_ff");
 	
 	private static final  Set<String> carsharingLegs = ImmutableSet.of("oneway_vehicle", "twoway_vehicle",
-			"freefloating_vehicle");*/
+			"freefloating_vehicle");
 	
 	public CarsharingLegScoringFunction(ScoringParameters params, 
 			Config config,  Network network, DemandHandler demandHandler,
@@ -76,25 +78,30 @@ public class CarsharingLegScoringFunction extends org.matsim.core.scoring.functi
 		
 		
 		double tmpScore = 0.0D;
-		/*double travelTime = arrivalTime - departureTime;
+
+		double personVoT = (double) person.getAttributes().getAttribute("vot");
+		Double constantVot = Double.parseDouble(this.config.getModule("TwoWayCarsharing").getParams().get("votTwoWayCarsharing"));
+		
+		
+		double travelTime = arrivalTime - departureTime;
 		String mode = leg.getMode();
 		if (carsharingLegs.contains(mode)) {
 					
 			if (("oneway_vehicle").equals(mode)) {				
 				tmpScore += Double.parseDouble(this.config.getModule("OneWayCarsharing").getParams().get("constantOneWayCarsharing"));
-				tmpScore += travelTime * Double.parseDouble(this.config.getModule("OneWayCarsharing").getParams().get("travelingOneWayCarsharing")) / 3600.0;
+				tmpScore += constantVot * personVoT * travelTime * Double.parseDouble(this.config.getModule("OneWayCarsharing").getParams().get("travelingOneWayCarsharing")) / 3600.0;
 			}		
 		
 			else if (("freefloating_vehicle").equals(mode)) {				
 				
 				tmpScore += Double.parseDouble(this.config.getModule("FreeFloating").getParams().get("constantFreeFloating"));
-				tmpScore += travelTime * Double.parseDouble(this.config.getModule("FreeFloating").getParams().get("travelingFreeFloating")) / 3600.0;
+				tmpScore += constantVot * personVoT * travelTime * Double.parseDouble(this.config.getModule("FreeFloating").getParams().get("travelingFreeFloating")) / 3600.0;
 			}		
 			
 			else if (("twoway_vehicle").equals(mode)) {				
 				
 				tmpScore += Double.parseDouble(this.config.getModule("TwoWayCarsharing").getParams().get("constantTwoWayCarsharing"));
-				tmpScore += travelTime * Double.parseDouble(this.config.getModule("TwoWayCarsharing").getParams().get("travelingTwoWayCarsharing")) / 3600.0;
+				tmpScore += constantVot * personVoT * travelTime * Double.parseDouble(this.config.getModule("TwoWayCarsharing").getParams().get("travelingTwoWayCarsharing")) / 3600.0;
 			}
 		}
 		
@@ -102,16 +109,16 @@ public class CarsharingLegScoringFunction extends org.matsim.core.scoring.functi
 			
 			tmpScore += getWalkScore(leg.getRoute().getDistance(), travelTime);
 			
-		}*/			
+		}			
 		return tmpScore;
 	}
 
-	/*private double getWalkScore(double distance, double travelTime)
+	private double getWalkScore(double distance, double travelTime)
 	{
 		double score = 0.0D;
 
 		score += travelTime * this.params.modeParams.get(TransportMode.walk).marginalUtilityOfTraveling_s + this.params.modeParams.get(TransportMode.walk).marginalUtilityOfDistance_m * distance;
 
 		return score;
-	}*/
+	}
 }

@@ -169,7 +169,7 @@ public class RunCarsharingIT {
 
 			NodeList nList = doc.getElementsByTagName("person");
 
-			System.out.println("----------------------------");
+			//System.out.println("----------------------------");
 
 			for (int temp = 0; temp < nList.getLength(); temp++) {
 
@@ -193,7 +193,7 @@ public class RunCarsharingIT {
 					Person person = sc.getPopulation().getPersons().get(personId);
 					if (income >= 0) {
 						person.getAttributes().putAttribute("income", income);
-						System.out.println("--------------- id: "+person.getId()+",  income: "+person.getAttributes().getAttribute("income"));
+						//System.out.println("--------------- id: "+person.getId()+",  income: "+person.getAttributes().getAttribute("income"));
 					} else {
 						person.getAttributes().putAttribute("income", -1);
 						System.err.println("Income is not a positive number.");
@@ -201,7 +201,7 @@ public class RunCarsharingIT {
 					
 					if (vot >= 0) {
 						person.getAttributes().putAttribute("vot", vot);
-						System.out.println("--------------- id: "+person.getId()+",  vot: "+person.getAttributes().getAttribute("vot"));
+						//System.out.println("--------------- id: "+person.getId()+",  vot: "+person.getAttributes().getAttribute("vot"));
 					} else {
 						person.getAttributes().putAttribute("vot", -1.0);
 						System.err.println("Income is not a positive number.");

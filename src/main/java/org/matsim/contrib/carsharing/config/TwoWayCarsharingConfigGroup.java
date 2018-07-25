@@ -24,6 +24,8 @@ public class TwoWayCarsharingConfigGroup extends ReflectiveConfigGroup {
 	
 	private boolean useTwoWayCarsharing = false;
 	
+	private String votTwoWayCarsharing = null;
+	
 	public TwoWayCarsharingConfigGroup() {
 		super(GROUP_NAME);
 	}
@@ -106,6 +108,16 @@ public class TwoWayCarsharingConfigGroup extends ReflectiveConfigGroup {
 	@StringSetter( "useTwoWayCarsharing" )
 	public void setUseTwoWayCarsharing(final boolean useTwoWayCarsharing) {
 		this.useTwoWayCarsharing = useTwoWayCarsharing;
+	}
+
+	@StringGetter( "votTwoWayCarsharing" )
+	public String getVotTwoWayCarsharing() {
+		return votTwoWayCarsharing;
+	}
+
+	@StringSetter( "votTwoWayCarsharing" )
+	public void setVotTwoWayCarsharing(String votTwoWayCarsharing) {
+		this.votTwoWayCarsharing = votTwoWayCarsharing;
 	}
 	
 	
