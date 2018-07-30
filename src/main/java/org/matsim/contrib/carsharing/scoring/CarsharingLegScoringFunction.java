@@ -38,11 +38,11 @@ public class CarsharingLegScoringFunction extends org.matsim.core.scoring.functi
 	private Person person;
 	private CarsharingSupplyInterface carsharingSupplyContainer;
 	
-	private static final  Set<String> walkingLegs = ImmutableSet.of("egress_walk_ow", "access_walk_ow",
+	/*private static final  Set<String> walkingLegs = ImmutableSet.of("egress_walk_ow", "access_walk_ow",
 			"egress_walk_tw", "access_walk_tw", "egress_walk_ff", "access_walk_ff");
 	
 	private static final  Set<String> carsharingLegs = ImmutableSet.of("oneway_vehicle", "twoway_vehicle",
-			"freefloating_vehicle");
+			"freefloating_vehicle");*/
 	
 	public CarsharingLegScoringFunction(ScoringParameters params, 
 			Config config,  Network network, DemandHandler demandHandler,
@@ -83,8 +83,10 @@ public class CarsharingLegScoringFunction extends org.matsim.core.scoring.functi
 		
 		
 		double tmpScore = 0.0D;
-
+		
+		//person VOT
 		double personVoT = (double) person.getAttributes().getAttribute("vot");
+		//Beta VOT form config.xml
 		Double constantVot = Double.parseDouble(this.config.getModule("TwoWayCarsharing").getParams().get("votTwoWayCarsharing"));
 		
 		
@@ -92,20 +94,32 @@ public class CarsharingLegScoringFunction extends org.matsim.core.scoring.functi
 		String mode = leg.getMode();
 		
 		int availCars = 1;
+		//startLink of person leg route
 		Link startLink = network.getLinks().get(leg.getRoute().getStartLinkId());
+		
+		//Search distance constant value form config.xml
 		double searchDistance =  Double.parseDouble(this.config.getModule("TwoWayCarsharing").getParams().get("searchDistanceTwoWayCarsharing")); 
+		
+		//Gets nearest car to the person depending on his location and search distance 
 		CSVehicle vehicle = this.carsharingSupplyContainer.findClosestAvailableVehicle(startLink, "twoway", "car", "Mobility", searchDistance);
 
 		if (vehicle != null && mode.equals("car")) {
 			
+			//get the station of the nearest vehicle to the person
 			CarsharingStation nearestStation = ((TwoWayContainer) this.carsharingSupplyContainer
 					.getCompany(vehicle.getCompanyId()).getVehicleContainer("twoway"))
 							.getTwowaycarsharingstationsMap()
 							.get(((StationBasedVehicle) vehicle).getStationId());
 			
+			//gets the number of available cars in the nearest station 
 			availCars = ((TwoWayCarsharingStation) nearestStation).getNumberOfVehicles(vehicle.getType());
+			
 			System.out.println("---------------------------------------- availCars " + availCars);
+			
+			//adds constant in disutility of travel equation
 			tmpScore += Double.parseDouble(this.config.getModule("TwoWayCarsharing").getParams().get("constantTwoWayCarsharing"));
+			
+			//adds personVot and number of available car updates to  disutility of travel equation
 			tmpScore += constantVot * personVoT * ((travelTime * Double.parseDouble(this.config.getModule("TwoWayCarsharing").getParams().get("travelingTwoWayCarsharing")) / 3600.0)/availCars);
 
 		}
@@ -135,16 +149,17 @@ public class CarsharingLegScoringFunction extends org.matsim.core.scoring.functi
 			
 			tmpScore += getWalkScore(leg.getRoute().getDistance(), travelTime);
 			
-		}	*/		
+		}	*/	
+		
 		return tmpScore;
 	}
 
-	private double getWalkScore(double distance, double travelTime)
+	/*private double getWalkScore(double distance, double travelTime)
 	{
 		double score = 0.0D;
 
 		score += travelTime * this.params.modeParams.get(TransportMode.walk).marginalUtilityOfTraveling_s + this.params.modeParams.get(TransportMode.walk).marginalUtilityOfDistance_m * distance;
 
 		return score;
-	}
+	}*/
 }
