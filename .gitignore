@@ -13,7 +13,7 @@ matsimExamples
 test/input/org/matsim/contrib/carsharing/runExample/RunCarsharingIT/*
 
 #Keep config.xml file
-!test/input/org/matsim/contrib/carsharing/runExample/RunCarsharingIT/config.xml
+#!test/input/org/matsim/contrib/carsharing/runExample/RunCarsharingIT/config.xml
 
 test/output/*
 

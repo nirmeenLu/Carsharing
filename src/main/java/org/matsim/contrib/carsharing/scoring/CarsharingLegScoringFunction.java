@@ -7,6 +7,7 @@ import javax.swing.text.html.HTMLDocument.HTMLReader.IsindexAction;
 import org.matsim.api.core.v01.Id;
 import org.matsim.api.core.v01.TransportMode;
 import org.matsim.api.core.v01.events.Event;
+import org.matsim.api.core.v01.network.Link;
 import org.matsim.api.core.v01.network.Network;
 import org.matsim.api.core.v01.population.Leg;
 import org.matsim.api.core.v01.population.Person;
@@ -14,8 +15,12 @@ import org.matsim.contrib.carsharing.manager.demand.AgentRentals;
 import org.matsim.contrib.carsharing.manager.demand.DemandHandler;
 import org.matsim.contrib.carsharing.manager.demand.RentalInfo;
 import org.matsim.contrib.carsharing.manager.supply.CarsharingSupplyInterface;
+import org.matsim.contrib.carsharing.manager.supply.TwoWayContainer;
 import org.matsim.contrib.carsharing.manager.supply.costs.CostsCalculatorContainer;
+import org.matsim.contrib.carsharing.stations.CarsharingStation;
+import org.matsim.contrib.carsharing.stations.TwoWayCarsharingStation;
 import org.matsim.contrib.carsharing.vehicles.CSVehicle;
+import org.matsim.contrib.carsharing.vehicles.StationBasedVehicle;
 import org.matsim.core.config.Config;
 import org.matsim.core.config.groups.PlanCalcScoreConfigGroup;
 import org.matsim.core.scoring.functions.ScoringParameters;
@@ -85,8 +90,28 @@ public class CarsharingLegScoringFunction extends org.matsim.core.scoring.functi
 		
 		double travelTime = arrivalTime - departureTime;
 		String mode = leg.getMode();
-		if (carsharingLegs.contains(mode)) {
-					
+		
+		int availCars = 1;
+		Link startLink = network.getLinks().get(leg.getRoute().getStartLinkId());
+		double searchDistance =  Double.parseDouble(this.config.getModule("TwoWayCarsharing").getParams().get("searchDistanceTwoWayCarsharing")); 
+		CSVehicle vehicle = this.carsharingSupplyContainer.findClosestAvailableVehicle(startLink, "twoway", "car", "Mobility", searchDistance);
+
+		if (vehicle != null && mode.equals("car")) {
+			
+			CarsharingStation nearestStation = ((TwoWayContainer) this.carsharingSupplyContainer
+					.getCompany(vehicle.getCompanyId()).getVehicleContainer("twoway"))
+							.getTwowaycarsharingstationsMap()
+							.get(((StationBasedVehicle) vehicle).getStationId());
+			
+			availCars = ((TwoWayCarsharingStation) nearestStation).getNumberOfVehicles(vehicle.getType());
+			System.out.println("---------------------------------------- availCars " + availCars);
+			tmpScore += Double.parseDouble(this.config.getModule("TwoWayCarsharing").getParams().get("constantTwoWayCarsharing"));
+			tmpScore += constantVot * personVoT * ((travelTime * Double.parseDouble(this.config.getModule("TwoWayCarsharing").getParams().get("travelingTwoWayCarsharing")) / 3600.0)/availCars);
+
+		}
+			
+
+		/*if (carsharingLegs.contains(mode)) {
 			if (("oneway_vehicle").equals(mode)) {				
 				tmpScore += Double.parseDouble(this.config.getModule("OneWayCarsharing").getParams().get("constantOneWayCarsharing"));
 				tmpScore += constantVot * personVoT * travelTime * Double.parseDouble(this.config.getModule("OneWayCarsharing").getParams().get("travelingOneWayCarsharing")) / 3600.0;
@@ -98,10 +123,11 @@ public class CarsharingLegScoringFunction extends org.matsim.core.scoring.functi
 				tmpScore += constantVot * personVoT * travelTime * Double.parseDouble(this.config.getModule("FreeFloating").getParams().get("travelingFreeFloating")) / 3600.0;
 			}		
 			
-			else if (("twoway_vehicle").equals(mode)) {				
+			else if (("twoway_vehicle").equals(mode)) {		
+				
 				
 				tmpScore += Double.parseDouble(this.config.getModule("TwoWayCarsharing").getParams().get("constantTwoWayCarsharing"));
-				tmpScore += constantVot * personVoT * travelTime * Double.parseDouble(this.config.getModule("TwoWayCarsharing").getParams().get("travelingTwoWayCarsharing")) / 3600.0;
+				tmpScore += constantVot * personVoT * ((travelTime * Double.parseDouble(this.config.getModule("TwoWayCarsharing").getParams().get("travelingTwoWayCarsharing")) / 3600.0)/availCars);
 			}
 		}
 		
@@ -109,7 +135,7 @@ public class CarsharingLegScoringFunction extends org.matsim.core.scoring.functi
 			
 			tmpScore += getWalkScore(leg.getRoute().getDistance(), travelTime);
 			
-		}			
+		}	*/		
 		return tmpScore;
 	}
 

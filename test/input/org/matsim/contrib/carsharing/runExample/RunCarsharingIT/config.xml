@@ -6,7 +6,7 @@
 
 	<module name="controler" >
 		<param name="firstIteration" value="0" />
-		<param name="lastIteration" value="2" />
+		<param name="lastIteration" value="5" />
 		<param name="outputDirectory" value="P:/Eclipse-MATSim/matsim/contribs/carsharing/test/output/org/matsim/contrib/carsharing/runExample/RunCarsharingIT/" />
 		<param name="eventsFileFormat" value="xml" />
 		<param name="writePlansInterval" value="1" />
