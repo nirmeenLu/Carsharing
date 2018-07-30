@@ -12,6 +12,9 @@ matsimExamples
 
 test/input/*
 
+#Keep config.xml file
+!test/input/**/config.xml
+
 test/output/*
 
 test.old/*
