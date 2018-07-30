@@ -10,10 +10,10 @@ matsimExamples
 /log_projects.log
 
 
-test/input/*
+test/input/org/matsim/contrib/carsharing/runExample/RunCarsharingIT/*
 
 #Keep config.xml file
-!test/input/**/config.xml
+!test/input/org/matsim/contrib/carsharing/runExample/RunCarsharingIT/config.xml
 
 test/output/*
 
