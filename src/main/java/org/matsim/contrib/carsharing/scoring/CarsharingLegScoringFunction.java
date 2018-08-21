@@ -120,7 +120,7 @@ public class CarsharingLegScoringFunction extends org.matsim.core.scoring.functi
 			tmpScore += Double.parseDouble(this.config.getModule("TwoWayCarsharing").getParams().get("constantTwoWayCarsharing"));
 			
 			//adds personVot and number of available car updates to  disutility of travel equation
-			tmpScore += constantVot * personVoT * ((travelTime * Double.parseDouble(this.config.getModule("TwoWayCarsharing").getParams().get("travelingTwoWayCarsharing")) / 3600.0)/availCars);
+			tmpScore += 1* constantVot * personVoT * ((travelTime * Double.parseDouble(this.config.getModule("TwoWayCarsharing").getParams().get("travelingTwoWayCarsharing")) / 3600.0)/availCars);
 
 		}
 			
