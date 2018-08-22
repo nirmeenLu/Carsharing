@@ -13,7 +13,7 @@ public class CostCalculationExample implements CostCalculation {
 	private final static double betaRentalTIme = 1.0;
 	private final static double betaDistance = 1.0;	
 	private final static double betaWalking = 1.0;
-	private final static double scaleTOMatchCar = 1000.0;
+	private final static double scaleTOMatchCar = -0.0001;
 	private final static double betaVOT = 3600.0;
 	private final static double rentalCost = 1.0;
 	private final static double carsAvailable = 1.0;

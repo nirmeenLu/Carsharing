@@ -103,6 +103,7 @@ public class CarsharingLegScoringFunction extends org.matsim.core.scoring.functi
 		//Gets nearest car to the person depending on his location and search distance 
 		CSVehicle vehicle = this.carsharingSupplyContainer.findClosestAvailableVehicle(startLink, "twoway", "car", "Mobility", searchDistance);
 
+/*		
 		if (vehicle != null && mode.equals("car")) {
 			
 			//get the station of the nearest vehicle to the person
@@ -123,7 +124,7 @@ public class CarsharingLegScoringFunction extends org.matsim.core.scoring.functi
 			tmpScore += 1* constantVot * personVoT * ((travelTime * Double.parseDouble(this.config.getModule("TwoWayCarsharing").getParams().get("travelingTwoWayCarsharing")) / 3600.0)/availCars);
 
 		}
-			
+*/			
 
 		/*if (carsharingLegs.contains(mode)) {
 			if (("oneway_vehicle").equals(mode)) {				
