@@ -55,6 +55,7 @@ public class CarsharingUtils {
 			costCalculations.put("freefloating", new CostCalculationExample());
 			costCalculations.put("twoway", new CostCalculationExample());
 			costCalculations.put("oneway", new CostCalculationExample());
+	
 			CompanyCosts companyCosts = new CompanyCosts(costCalculations);
 			
 			companyCostsContainer.getCompanyCostsMap().put(s, companyCosts);
