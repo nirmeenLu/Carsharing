@@ -18,3 +18,5 @@ test/input/org/matsim/contrib/carsharing/runExample/RunCarsharingIT/*
 test/output/*
 
 test.old/*
+test/input.old copy/org/matsim/contrib/carsharing/runExample/RunCarsharingIT/plans.xml
+*.xml
