@@ -87,9 +87,9 @@ public class CarsharingLegScoringFunction extends org.matsim.core.scoring.functi
 		//person VOT
 		double personVoT = (double) person.getAttributes().getAttribute("vot");
 		//Beta VOT form config.xml
-		Double constantVot = Double.parseDouble(this.config.getModule("TwoWayCarsharing").getParams().get("votTwoWayCarsharing"));
-		
-		
+		//Double constantVot = Double.parseDouble(this.config.getModule("TwoWayCarsharing").getParams().get("votTwoWayCarsharing"));
+		Double constantVot = Double.parseDouble(this.config.getModules().get("TwoWayCarsharing").getParams().get("votTwoWayCarsharing"));
+
 		double travelTime = arrivalTime - departureTime;
 		String mode = leg.getMode();
 		
@@ -98,7 +98,7 @@ public class CarsharingLegScoringFunction extends org.matsim.core.scoring.functi
 		Link startLink = network.getLinks().get(leg.getRoute().getStartLinkId());
 		
 		//Search distance constant value form config.xml
-		double searchDistance =  Double.parseDouble(this.config.getModule("TwoWayCarsharing").getParams().get("searchDistanceTwoWayCarsharing")); 
+		double searchDistance =  Double.parseDouble(this.config.getModules().get("TwoWayCarsharing").getParams().get("searchDistanceTwoWayCarsharing")); 
 		
 		//Gets nearest car to the person depending on his location and search distance 
 		CSVehicle vehicle = this.carsharingSupplyContainer.findClosestAvailableVehicle(startLink, "twoway", "car", "Mobility", searchDistance);
