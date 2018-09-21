@@ -16,10 +16,14 @@ public class CostCalculationExample implements CostCalculation {
 	private final static double betaWalking = 100.0;
 	private final static double scaleTOMatchCar = 1.0; // 0.325; SCENDERE E VEDERE CHE SUCCEDE
 	private final static double betaVOT = 10.0; // 1.0;
-	private final static double rentalCost = 15.0;
+	private final static double timeCost = 0.2;
+	private final static double stopCost = 0.2;
+
+	private final static double distCost = 0;
 	private final static double carsAvailable = 1.0;
 	private final static double alfaCS = 1.0;
 	private Person person;
+	//COST here ct =  0.20 and cd  = 0
 
 	private static final Logger log = Logger.getLogger(CostCalculationExample.class);
 
@@ -28,32 +32,39 @@ public class CostCalculationExample implements CostCalculation {
 
 		double rentalTime = rentalInfo.getEndTime() - rentalInfo.getStartTime();
 		double inVehicleTime = rentalInfo.getInVehicleTime();
-		double accessTime = rentalInfo.getAccessEndTime() - rentalInfo.getAccessStartTime();
-		double egressTime = rentalInfo.getEgressEndTime() - rentalInfo.getEgressStartTime();
 		double distance = rentalInfo.getDistance();
-		double personVot = 1;// (double) person.getAttributes().getAttribute("vot");
-
-		double evaVot = CostCalculationExample.betaVOT / personVot;
-		double evaTime = (CostCalculationExample.rentalCost * (rentalTime / 3600)) / CostCalculationExample.carsAvailable;
-		double evaWalk = CostCalculationExample.betaWalking * ((accessTime + egressTime) / 3600);
-		double evaDist = CostCalculationExample.betaDistance * (distance / 1000);
-		double evaTrav = CostCalculationExample.betaTravel * (inVehicleTime / 3600);
-		double distTrav = CostCalculationExample.betaRentalTIme * (evaTrav + evaDist);
-
-		double costLu = scaleTOMatchCar * (CostCalculationExample.alfaCS + evaVot + distTrav + evaWalk + evaTrav);
-
-		// need to insert the available cars carsAvailable (1/aj) under
-		// (CostCalculationExample.rentalCost*rentalTIme)
-
-		log.warn("^^^^^^^^^^> VOT " + evaVot);
-		log.warn("==========> WALK " + evaWalk);
-		log.warn("==========> TIME " + evaTime);
-		log.warn("==========> DIST " + evaDist);
-		log.warn("==========> TRAV " + evaTrav);
-		log.warn("==========> DIST + TRAV " + distTrav);
+		
+		
+		double evalTime = (timeCost * (rentalTime / 60)) + ((rentalTime - inVehicleTime) / 60.0 * stopCost);
+		
+		double evalDist = distCost * (distance / 1000);
+		
+		double costLu = scaleTOMatchCar * (evalTime + evalDist);
+		
+		log.warn("==========> TIME " + evalTime);
+		log.warn("==========> DIST " + evalDist);
 		log.warn("__________> cost " + costLu);
 
 		return costLu;
+		
+
+		/*double accessTime = rentalInfo.getAccessEndTime() - rentalInfo.getAccessStartTime();
+		double egressTime = rentalInfo.getEgressEndTime() - rentalInfo.getEgressStartTime();*/
+		//double personVot = 1;// (double) person.getAttributes().getAttribute("vot");
+		/*double evaVot = CostCalculationExample.betaVOT / personVot;
+		double evaWalk = CostCalculationExample.betaWalking * ((accessTime + egressTime) / 3600);
+		double evaTrav = CostCalculationExample.betaTravel * (inVehicleTime / 3600);
+		double distTrav = CostCalculationExample.betaRentalTIme * (evaTrav + evaDist);*/
+
+		//double costLu = scaleTOMatchCar * (CostCalculationExample.alfaCS + evaVot + distTrav + evaWalk + evaTrav);
+
+		// need to insert the available cars carsAvailable (1/aj) under
+		// (CostCalculationExample.rentalCost*rentalTIme)
+		
+		//log.warn("^^^^^^^^^^> VOT " + evaVot);
+		//log.warn("==========> WALK " + evaWalk);
+		//log.warn("==========> TRAV " + evaTrav);
+		//log.warn("==========> DIST + TRAV " + distTrav);
 
 	}
 

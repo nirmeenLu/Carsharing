@@ -68,12 +68,39 @@ public class CarsharingLegScoringFunction extends org.matsim.core.scoring.functi
 		
 		AgentRentals agentRentals = this.demandHandler.getAgentRentalsMap().get(person.getId());
 		if (agentRentals != null) {
-			double marginalUtilityOfMoney = ((PlanCalcScoreConfigGroup)this.config.getModule("planCalcScore")).getMarginalUtilityOfMoney();
+			double marginalUtilityOfMoney = ((PlanCalcScoreConfigGroup)this.config.getModules().get("planCalcScore")).getMarginalUtilityOfMoney();
 			for(RentalInfo rentalInfo : agentRentals.getArr()) {
 				CSVehicle vehicle = this.carsharingSupplyContainer.getAllVehicles().get(rentalInfo.getVehId().toString());
-				if (marginalUtilityOfMoney != 0.0)
-					score += -1 * this.costsCalculatorContainer.getCost(vehicle.getCompanyId(), //here the cost becomes negative for the scoring part
-							rentalInfo.getCarsharingType(), rentalInfo) * marginalUtilityOfMoney;
+				
+				//person VOT
+				double personVoT = (double) person.getAttributes().getAttribute("vot");
+				//Beta VOT form config.xml
+				double betaVot = Double.parseDouble(this.config.getModules().get("TwoWayCarsharing").getParams().get("votTwoWayCarsharing"));
+				
+				int availCars = 1;
+				
+				//adds constant to score
+				score += Double.parseDouble(this.config.getModules().get("TwoWayCarsharing").getParams().get("constantTwoWayCarsharing"));
+				
+				//adds personVot to score
+				score +=  betaVot * personVoT;
+				
+				//get the station of the nearest vehicle to the person
+				CarsharingStation nearestStation = ((TwoWayContainer) this.carsharingSupplyContainer
+						.getCompany(vehicle.getCompanyId()).getVehicleContainer("twoway"))
+								.getTwowaycarsharingstationsMap()
+								.get(((StationBasedVehicle) vehicle).getStationId());
+				
+				//gets the number of available cars in the nearest station 
+				availCars = ((TwoWayCarsharingStation) nearestStation).getNumberOfVehicles(vehicle.getType());
+				
+				if (marginalUtilityOfMoney != 0.0) {
+					//adds the cost per time and distance over number of available cars
+					score += -1 * ((this.costsCalculatorContainer.getCost(vehicle.getCompanyId(), //here the cost becomes negative for the scoring part
+							rentalInfo.getCarsharingType(), rentalInfo) * marginalUtilityOfMoney)/availCars);
+
+				}
+				
 			}			
 		}				
 	}	
@@ -84,10 +111,12 @@ public class CarsharingLegScoringFunction extends org.matsim.core.scoring.functi
 		
 		double tmpScore = 0.0D;
 		
-		//person VOT
+		return tmpScore;
+		
+		
+		/*//person VOT
 		double personVoT = (double) person.getAttributes().getAttribute("vot");
 		//Beta VOT form config.xml
-		//Double constantVot = Double.parseDouble(this.config.getModule("TwoWayCarsharing").getParams().get("votTwoWayCarsharing"));
 		Double constantVot = Double.parseDouble(this.config.getModules().get("TwoWayCarsharing").getParams().get("votTwoWayCarsharing"));
 
 		double travelTime = arrivalTime - departureTime;
@@ -101,10 +130,9 @@ public class CarsharingLegScoringFunction extends org.matsim.core.scoring.functi
 		double searchDistance =  Double.parseDouble(this.config.getModules().get("TwoWayCarsharing").getParams().get("searchDistanceTwoWayCarsharing")); 
 		
 		//Gets nearest car to the person depending on his location and search distance 
-		CSVehicle vehicle = this.carsharingSupplyContainer.findClosestAvailableVehicle(startLink, "twoway", "car", "Mobility", searchDistance);
-
-/*		
-		if (vehicle != null && mode.equals("car")) {
+		CSVehicle vehicle = this.carsharingSupplyContainer.findClosestAvailableVehicle(startLink, "twoway", "car", "Mobility", searchDistance);*/
+	
+		/*if (vehicle != null && mode.equals("car")) {
 			
 			//get the station of the nearest vehicle to the person
 			CarsharingStation nearestStation = ((TwoWayContainer) this.carsharingSupplyContainer
@@ -123,8 +151,8 @@ public class CarsharingLegScoringFunction extends org.matsim.core.scoring.functi
 			//adds personVot and number of available car updates to  disutility of travel equation
 			tmpScore += 1* constantVot * personVoT * ((travelTime * Double.parseDouble(this.config.getModule("TwoWayCarsharing").getParams().get("travelingTwoWayCarsharing")) / 3600.0)/availCars);
 
-		}
-*/			
+		}*/
+	
 
 		/*if (carsharingLegs.contains(mode)) {
 			if (("oneway_vehicle").equals(mode)) {				
@@ -152,7 +180,7 @@ public class CarsharingLegScoringFunction extends org.matsim.core.scoring.functi
 			
 		}	*/	
 		
-		return tmpScore;
+		
 	}
 
 	/*private double getWalkScore(double distance, double travelTime)
