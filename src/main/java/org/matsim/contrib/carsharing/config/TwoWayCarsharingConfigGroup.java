@@ -26,6 +26,12 @@ public class TwoWayCarsharingConfigGroup extends ReflectiveConfigGroup {
 	
 	private String votTwoWayCarsharing = null;
 	
+	private String disableVot = "false";
+	
+	private String disableAvailCars = "false";
+	
+	
+
 	public TwoWayCarsharingConfigGroup() {
 		super(GROUP_NAME);
 	}
@@ -120,6 +126,24 @@ public class TwoWayCarsharingConfigGroup extends ReflectiveConfigGroup {
 		this.votTwoWayCarsharing = votTwoWayCarsharing;
 	}
 	
+	@StringGetter( "disableVot" )
+	public String getDisableVot() {
+		return disableVot;
+	}
+	@StringSetter( "disableVot" )
+	public void setDisableVot(String disableVot) {
+		this.disableVot = disableVot;
+	}
 	
+	@StringGetter( "disableAvailCars" )
+	public String getDisableAvailCars() {
+		return disableAvailCars;
+	}
+	@StringSetter( "disableAvailCars" )
+	public void setDisableAvailCars(String disableAvailCars) {
+		this.disableAvailCars = disableAvailCars;
+	}
+
+
 }
 
